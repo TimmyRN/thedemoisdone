@@ -1,23 +1,21 @@
-import clsx from 'clsx'
+import React from 'react';
+import logo from '../logo.svg'; // Ensure this path is correct
 
-export function Heading({ className, level = 1, ...props }) {
-  let Element = `h${level}`
-
+const Header = () => {
   return (
-    <Element
-      {...props}
-      className={clsx(className, 'text-2xl/8 font-semibold text-zinc-950 sm:text-xl/8 dark:text-white')}
-    />
-  )
-}
+    <header className="bg-primary text-white p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <img src={logo} alt="Logo" className="h-10" />
+        <nav className="flex space-x-4">
+          <a href="#home" className="hover:text-secondary">Home</a>
+          <a href="#about" className="hover:text-secondary">About</a>
+          <a href="#services" className="hover:text-secondary">Services</a>
+          <a href="#contact" className="hover:text-secondary">Contact</a>
+        </nav>
+        <button className="bg-accent text-primary py-2 px-4 rounded hover:bg-secondary">Sign Up</button>
+      </div>
+    </header>
+  );
+};
 
-export function Subheading({ className, level = 2, ...props }) {
-  let Element = `h${level}`
-
-  return (
-    <Element
-      {...props}
-      className={clsx(className, 'text-base/7 font-semibold text-zinc-950 sm:text-sm/6 dark:text-white')}
-    />
-  )
-}
+export default Header;
